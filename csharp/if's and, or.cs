@@ -3,6 +3,8 @@ using System;
 namespace MyCompiler {
     class Program {
         public static void Main(string[] args) {
+        // and 는 %% or은 ||
+        
         //1. a를 입력한다
         //2. a가 20보다 작고 3의 배수이면 "find number!" 출력
         //3. a가 20보다 작거나 3의배수이면 "similar number!"
