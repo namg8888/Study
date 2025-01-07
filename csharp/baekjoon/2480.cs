@@ -7,36 +7,46 @@ namespace MyCompiler {
         //같은 눈이 3개가 나오면 10,000원+(같은 눈)×1,000원의 상금을 받게 된다.
         //같은 눈이 2개만 나오는 경우에는 1,000원+(같은 눈)×100원의 상금을 받게 된다.
         //모두 다른 눈이 나오는 경우에는 (그 중 가장 큰 눈)×100원의 상금을 받게 된다.
-        string input = Console.ReadLine();
-        int space = input.IndexOf(' ');
-        int space1 = input.IndexOf(' ');
-        int a, b, c, d;
-        string a1 = input.Substring(0);
-        string b1 = input.Substring(2);
-        a = int.Parse(a1);
-        b = int.Parse(b1);
-        c = int.Parse(c1);
-        if(a>b && a>c){
+        string input = Console.ReadLine();//프로그램 입력
+        string[] parts = input.Split(' ');//띄어쓰기로 나누기
+        int a = int.Parse(parts[0]);//첫번째 배열
+        int b = int.Parse(parts[1]);//두번째 배열
+        int c = int.Parse(parts[2]);//세번째 배열
+        int d = 1;// 가장 큰 수
+        int e = 1;// 겹치는 수
+            
+        //큰 수 비교
+        if(a>b && a>c){//a가 가장 클 때
         d = a;
             }
-            else if(b>a && b>c){
+            else if(b>a && b>c){//b가 가장 클 때
         d = b;
             }
-            else if(c>a && c>b){
+            else if(c>a && c>b){//c가 가장 클 때
         d= c;       
             }
             
-        if(a==b && b==c){
-        Console.WriteLine($"{10000+(d*1000)}");    
+        //같은 수 비교
+        if(a==b){//첫번째와 두번째 수가 같을 때
+        e = a;    
         }
-            else if(a==b || b==c || a==c){
-        Console.WriteLine($"{1000+(d*100)}");        
+            else if(b==c){//두번째와 세번째 수가 같을 때
+        e = b;   
+        }
+            else if(a==c){//첫번째와 세번째 수가 같을 때
+        e = c;    
+        }
+        
+        //계산    
+        if(a==b && b==c){//3개의 수가 같다
+        Console.WriteLine($"{10000+(e*1000)}");    
+        }
+            else if(a==b || b==c || a==c ){//2개의 수가 같다
+        Console.WriteLine($"{1000+(e*100)}");        
             }
-            else if(a!=b && b!=c){
+            else if(a!=b && b!=c){//같은 수가 없다.
         Console.WriteLine($"{d*100}");
                 }
         } 
-        // 같은 눈이 무엇인지 판별 못함
-        // a,b,c중에서 가장 큰 값이 무엇인지 판별 못함
     }
 }
