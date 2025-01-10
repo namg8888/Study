@@ -12,102 +12,93 @@ namespace MyCompiler {
         int c = int.Parse(parts[2]);//세번째 배열
         int d = int.Parse(parts[2]);//네번째 배열
         int e = int.Parse(parts[2]);//다섯번째 배열
-        int f = 10;//가장 작은 수
-        int g = 10;//두번째로 작은 수
+        int f = 1;//가장 작은 수
+        int g = 1;//두번째로 작은 수
         
-        //가장 작은 수
-        if (a<=b && a<=c && a<=d && a<=e){
-        f = a;
-        if(f>b &&){
+        
+            if (a < b && a < c && a < d && a < e){
+            f = a; //a가 가장 작다.
             
-        }
-            else if(){
-                
+            if(b < c && b < d && b < e){
+            g = b;
             }
-            else if(){
-                
+            else if(c < d && c < e){
+            g = c;    
             }
-            else if(){
-                
+            else if(d<e){
+            g = d;    
             }
-            else if(){
-                
+            else{
+            g = e;    
+            }
             }
 
-        }
-            else if(b<=a && b<=c && b<=d && b<=e){
-            f = b;
-                 if(){
-                     
-                 }
-                else if(){
-                    
+            else if(b < a && b < c && b < d && b < e){
+            f = b; //b가 가장 작다.
+                
+                if(a < c && a < d && a < e){
+                g = a;    
                 }
-                else if(){
-                    
+                else if(c < d && c < e){
+                g = c;    
                 }
-                else if(){
-                    
+                else if(d < e){
+                g = d;    
                 }
-                else if(){
-                    
+                else{
+                g = e;    
                 }
-            }
-            else if(c<=a && c<=b && c<=d && c<=e){
-            f = c; 
-                if(){
-                    
                 }
-                else if(){
-                    
+            else if(c < a && c < b && c < d && c < e){
+            f = c; //c가 가장 작다.
+                
+                if(a < b && a < d && a < e){
+                g = a;   
                 }
-                else if(){
-                    
+                else if(b < d && b < e){
+                g = b;    
                 }
-                else if(){
-                    
+                else if(d < e){
+                g = d;    
                 }
-                else if(){
-                    
+                else{
+                g = e;   
                 }
-            }
-            else if(d<=a && d<=b && d<=c && d<=e){
-            f = d;
-                 if(){
-                     
-                 }
-                else if(){
-                    
                 }
-                else if(){
-                    
+            else if(d < a && d < b && d < c && d < e){
+            f = d; //d가 가장 작다.
+
+                if(a < b && a < c && a < e){
+                g = a;    
                 }
-                else if(){
-                    
+                else if(b < c && b < e){
+                g = b;   
                 }
-                else if(){
-                    
+                else if(c < e){
+                g = c;    
                 }
-            }
-            else if(e<=a && e<=b && e<=c && e<=d){
-            f = e;
-                 if(){
-                     
-                 }
-                else if(){
-                    
+                else{
+                g = e;    
                 }
-                else if(){
-                    
                 }
-                else if(){
-                    
+            else{
+            f = e; //e가 가장 작다.
+
+                if(a < b && a < c && a < d){
+                g = a;    
                 }
-                else if(){
-                    
+                else if(b < c && b < d){
+                g = b;    
                 }
-            }
-        Console.WriteLine(f);
+                else if(c < d){
+                g = c;    
+                }
+                else{
+                g = d;    
+                }
+                }
+        Console.WriteLine(f);//첫번째로 작은 수
+        Console.WriteLine(g);//두번째로 작은 수
         }
     }
 }
