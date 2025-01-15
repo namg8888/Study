@@ -6,9 +6,8 @@ namespace MyCompiler {
         string a = Console.ReadLine();
         int n = int.Parse(a);
         char b = '*';
-        int y = 0
         for(int i = 1; i <= n; i++){     
-        for(int x = ; x >= i; x--){
+        for(int x = 0; x < n - i; x++){
         Console.Write(" ");    
         }        
         for(int z = 0; z < i; z++){
